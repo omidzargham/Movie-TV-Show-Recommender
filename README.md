@@ -18,7 +18,10 @@ Build something awesome
  - Demo the web application and present it to the rest of the class **without any slides**
  - Submit a write-up that consists of a description of the web application that was built
  
-## First step is to split into teams of 3-5 and submit a project idea
+
+## Part I
+
+### Split into teams of 3-5 and submit a project idea
  - There are NO EXCEPTIONS to this rule. Each team must have at least 3 people. If need be I will form teams.
  - Each team needs to come up with the web application that they would like to build. Here are some examples:
   - A web application that allows you to save reminders to be completed at a later point of time
@@ -26,25 +29,28 @@ Build something awesome
   - A web application that uses the Spotify API to play songs that it thinks the user would like
  - We will take a look at initial drafts of the web application that you have chosen to build and comment on the feasibility of your project idea and return with comments
  
-## Second step is to build your application
+## Part II
+ 
+### Build your application
  - Each team will have one repository where they will push their changes
  - This could be the first time you were not the only users in your own repository. Beware of merge conflicts and editing the same file with someone else
  - git pull often
  
-## Third step is to deploy your application
+### Deploy your application
  - All projects must be available on the internet
  - Must deploy your NodeJS server to the web
  - Recommended to use Heroku, but you can use 
  
-## Fourth step is to prepare and deliver for your presentation
+### Prepare and deliver for your presentation
  - Please note: presentations in this class are demo's of the actual web application, not slides
  - **There will be a 15 point deduction of the project grade if slides are used in the presentation**
  
-## Fifth step: commit all changes in repo and write a paper on what you did and name it LEARNINGS.md
+### Commit all changes in repo and write a paper on what you did and name it LEARNINGS.md
  - LEARNINGS.md should contain the following:
   - URL where application can be accessed
   - A description of what your project does and the functionality that it provides
   - A list of at least ten different web technologies that you used in your web application and where they are used
  
- 
-  
+## Extra Credit
+ - Build your own API server and incorporate it with your project
+ - You will need to deploy your API server in addition to your web server
