@@ -39,7 +39,7 @@ Build something awesome
  - Please note: presentations in this class are demo's of the actual web application, not slides
  - **There will be a 15 point deduction of the project grade if slides are used in the presentation***
  
-## Fifth step: commit all changes in repo, and write a paper on what you did and name it LEARNINGS.md
+## Fifth step: commit all changes in repo and write a paper on what you did and name it LEARNINGS.md
  - LEARNINGS.md should contain the following:
   - A description of what your project does
   - A description of what to do during the holiday season
