@@ -39,7 +39,8 @@ Build something awesome
 ### Deploy your application
  - All projects must be available on the internet
  - Must deploy your NodeJS server to the web
- - Recommended to use Heroku, but you can use 
+ - Recommended to use Heroku, but you can use other cloud services
+  - Here's a [tutorial](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) to deploy a NodeJS app to Heroku
  
 ### Prepare and deliver for your presentation
  - Please note: presentations in this class are demo's of the actual web application, not slides
