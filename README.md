@@ -2,7 +2,7 @@
 Build something awesome
 
 ## For this project you will accomplish the following
- - Build an application of your choosing with yourself and 2-4 other team members
+ - Build an application of your choosing with yourself and 3-5 other team members
  - Learn how to collaborate to build a single application
  - Show off your skills
  
@@ -40,7 +40,8 @@ Build something awesome
  - All projects must be available on the internet
  - Must deploy your NodeJS server to the web
  - Recommended to use Heroku, but you can use other cloud services
-  - Here's a [tutorial](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) to deploy a NodeJS app to Heroku
+  - Here's a [tutorial](https://coderwall.com/p/pstm1w/deploying-a-flask-app-at-heroku) to deploy a Python Flask app to Heroku, as well as [this tutorial](https://devcenter.heroku.com/articles/getting-started-with-python#introduction). 
+  - Please note: please install the linux version of the Heroku CLI on your vagrant box. All of these steps should be done on your vagrant box
  
 ### Prepare and deliver for your presentation
  - Please note: presentations in this class are demo's of the actual web application, not slides
