@@ -12,7 +12,7 @@ import requests
 # "static folder"
 app = Flask(__name__,static_url_path="/static")
 
-discover_base_url= "https://api.themoviedb.org/3/discover/" # + "movie" or "tv"
+discover_base_url= "https://api.themoviedb.org/3/discover/"
 
 discover_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
 
@@ -21,6 +21,7 @@ def getGenres():
     return genres
 
 genre_list = getGenres().json()["genres"]
+print(genre_list)
 
 @app.route("/")
 def home_page():
@@ -30,13 +31,17 @@ def home_page():
     """
     return render_template("index.html") # Render the template located in "templates/index.html"
 
+@app.route("/about")
+def about_page():
+    return render_template("about.html")
+
 @app.route("/movie")
 def movie():
-    return render_template("movie.html")
+    return render_template("genres.html")
 
 @app.route("/tv")
 def tv():
-    return render_template("tv.html")
+    return render_template("genres.html")
 
 @app.route("/list")
 def generate_list():
@@ -49,11 +54,11 @@ def generate_list():
         if (genre["name"] == genre_name):
             genre_id = str(genre["id"])
             break
-           
+
     discover_url = discover_base_url + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
     print(r.json())
-    return render_template("list.html") #should be list.html
+    return render_template("list.html") # need to properly place in movie data
 
 
 
