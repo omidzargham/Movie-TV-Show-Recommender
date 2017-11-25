@@ -12,9 +12,15 @@ import requests
 # "static folder"
 app = Flask(__name__,static_url_path="/static")
 
-base_url= "https://api.themoviedb.org/3/discover/movie?api_key=" + os.environ['API_KEY'] + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
+discover_base_url= "https://api.themoviedb.org/3/discover/" # + "movie" or "tv"
 
-entertainment_type = "" # save this in local storage on browser
+discover_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
+
+def getGenres():
+    genres = requests.get("https://api.themoviedb.org/3/genre/movie/list?api_key=" + os.environ['API_KEY'] + "&language=en-US")
+    return genres
+
+genre_list = getGenres().json()["genres"]
 
 @app.route("/")
 def home_page():
@@ -26,23 +32,30 @@ def home_page():
 
 @app.route("/movie")
 def movie():
-    entertainment_type = "movie"
     return render_template("movie.html")
 
 @app.route("/tv")
 def tv():
-    entertainment_type = "tv"
     return render_template("tv.html")
 
-@app.route("/list", methods=['POST'])
+@app.route("/list")
 def generate_list():
-    genre = "action"
-    discover_url = base_url + "&with_genre=" + genre
+    entertainment_type = request.args.get("entertainment_type")
+    genre_name = request.args.get("genre")
+    with_genre_id = ""
+    without_genre_ids = ""
+
+    for genre in genre_list:
+        if (genre["name"] == genre_name):
+            genre_id = str(genre["id"])
+            break
+           
+    discover_url = discover_base_url + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
     print(r.json())
-    return render_template("movie.html") #should be list.html
+    return render_template("list.html") #should be list.html
 
-	
+
 
 if __name__ == "__main__":
 	app.run()
