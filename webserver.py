@@ -63,7 +63,7 @@ def generate_list():
     r = requests.get(discover_url)
     movie_list = r.json()["results"]
     print(movie_list)
-    return render_template("list.html", list=movie_list) # need to properly place in movie data
+    return render_template("list.html", type=entertainment_type, list=movie_list) # need to properly place in movie data
 
 @app.route("/selection")
 def display_selection():

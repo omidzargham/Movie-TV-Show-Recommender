@@ -17,11 +17,23 @@
 		<div>
 			<div class="center" style="text-align: center; color: white">
 
+				{% if type == "movie" %}
+				<ul>
 					{% for movie in list %}
 
-						<li data-param-1="{{ movie.id }}">{{movie.title}} {{movie.release_date}} {{movie.overview }}</li>
+						<li movie-id="{{ movie.id }}">{{movie.title}} {{movie.release_date}} {{movie.overview }}</li>
 
 					{% endfor %}
+				</ul>
+				{% else %}
+				<ul>
+					{% for tvshow in list %}
+				
+						<li tvshow-id="{{ tvshow.id }}">{{tvshow.name}} {{tvshow.first_air_date}} {{tvshow.overview}}</li>
+				
+					{% endfor %}
+				</ul>
+				{% endif %}	
 
 			</div>
 
