@@ -15,9 +15,13 @@
 		</div>
 
 		<div>
-			<div class="center" style="text-align: center;">
+			<div class="center" style="text-align: center; color: white">
 
+					{% for movie in list %}
 
+						<li data-param-1="{{ movie.id }}">{{movie.title}} {{movie.release_date}} {{movie.overview }}</li>
+
+					{% endfor %}
 
 			</div>
 

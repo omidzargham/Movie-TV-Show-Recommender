@@ -12,16 +12,18 @@ import requests
 # "static folder"
 app = Flask(__name__,static_url_path="/static")
 
-discover_base_url= "https://api.themoviedb.org/3/discover/"
+api_base_url = "https://api.themoviedb.org/3/"
 
-discover_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"
+image_base_url = "https://image.tmdb.org/t/p/w1280/" #append "poster_path" attribute to this url to get image for movie/tv show
+
+youtube_url = "https://www.youtube.com/watch?v=" #append video "key" attribute to this url to get trailer for a particular movie/tv show
+
 
 def getGenres():
     genres = requests.get("https://api.themoviedb.org/3/genre/movie/list?api_key=" + os.environ['API_KEY'] + "&language=en-US")
     return genres
 
 genre_list = getGenres().json()["genres"]
-print(genre_list)
 
 @app.route("/")
 def home_page():
@@ -55,10 +57,22 @@ def generate_list():
             genre_id = str(genre["id"])
             break
 
-    discover_url = discover_base_url + entertainment_type + discover_params + "&with_genres=" + genre_id
+    discover_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"    
+
+    discover_url = api_base_url + "discover/" + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
-    print(r.json())
-    return render_template("list.html") # need to properly place in movie data
+    movie_list = r.json()["results"]
+    print(movie_list)
+    return render_template("list.html", list=movie_list) # need to properly place in movie data
+
+@app.route("/selection")
+def display_selection():
+    entertainment_type = request.args.get("entertainment_type")
+    ID = request.args.get("id")
+    selection_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&append_to_response=videos" #Gets movie details and Youtube IDs to get trailer from Youtube
+    selection_url = api_base_url + "movie" + "/" + str(283995) + selection_params #temporarily looking up Guardians of the Galaxy 2 until movie selection is implemented on client side
+    r = requests.get(selection_url)
+    return render_template("selection.html")
 
 
 
