@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+//Head
+	<head>
+  		<meta charset="UTF-8">
+    	<title>Movie and TV Show random generator</title>
+    	<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
+    	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+//Body
+	<body bgcolor="black">
+//Text
+		<div>
+			<h1 style="color: white">Your selection:</h1>
+		</div>
+
+		<div>
+			<div class="center" style="text-align: center; color: white">
+
+				{% if type == "movie" %}
+                
+                    <p>{{selection.title}} {{selection.release_date}} {{selection.overview }}</p>
+
+				{% else %}
+                
+                    <p>{{selection.name}} {{selection.first_air_date}} {{selection.overview}}</p>
+
+				{% endif %}	
+
+			</div>
+
+//Footer
+			<div>
+				<footer style="text-align:center; color: white">
+					<p>
+						<a href="/" style="text-decoration:none">Home</a> |
+						<a href="/about" style="text-decoration:none">About</a>
+					</p>
+				</footer>
+			</div>
+//End of footer	
+		</div>
+	</body>
+//End of Body
+</html>

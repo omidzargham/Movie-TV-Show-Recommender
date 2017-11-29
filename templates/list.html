@@ -21,7 +21,7 @@
 				<ul>
 					{% for movie in list %}
 
-						<li movie-id="{{ movie.id }}">{{movie.title}} {{movie.release_date}} {{movie.overview }}</li>
+						<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this)"><li>{{movie.title}} {{movie.release_date}} {{movie.overview }}</li></a>
 
 					{% endfor %}
 				</ul>
@@ -29,7 +29,7 @@
 				<ul>
 					{% for tvshow in list %}
 				
-						<li tvshow-id="{{ tvshow.id }}">{{tvshow.name}} {{tvshow.first_air_date}} {{tvshow.overview}}</li>
+						<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this)"><li>{{tvshow.name}} {{tvshow.first_air_date}} {{tvshow.overview}}</li></a>
 				
 					{% endfor %}
 				</ul>
@@ -48,6 +48,10 @@
 			</div>
 //End of footer	
 		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../static/js/script.js"></script>
+
 	</body>
 //End of Body
 </html>

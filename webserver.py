@@ -62,17 +62,18 @@ def generate_list():
     discover_url = api_base_url + "discover/" + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
     movie_list = r.json()["results"]
-    print(movie_list)
     return render_template("list.html", type=entertainment_type, list=movie_list) # need to properly place in movie data
 
 @app.route("/selection")
 def display_selection():
     entertainment_type = request.args.get("entertainment_type")
     ID = request.args.get("id")
+    print(ID)
     selection_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&append_to_response=videos" #Gets movie details and Youtube IDs to get trailer from Youtube
-    selection_url = api_base_url + "movie" + "/" + str(283995) + selection_params #temporarily looking up Guardians of the Galaxy 2 until movie selection is implemented on client side
+    selection_url = api_base_url + entertainment_type + "/" + str(ID) + selection_params 
     r = requests.get(selection_url)
-    return render_template("selection.html")
+    print(r.json())
+    return render_template("selection.html", type=entertainment_type, selection=r.json())
 
 
 
