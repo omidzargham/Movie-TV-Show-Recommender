@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-//Head
+
 	<head>
   		<meta charset="UTF-8">
-    	<title>Movie and TV Show random generator</title>
+		<title>Movie and TV Show random generator</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     	<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
     	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
-//Body
+
 	<body bgcolor="black">
-//Text
+
 		<div>
-			<h1 style="color: white">Here is a list of movies we found for you:</h1>
+			<h1>Here is a list of movies we found for you:</h1>
 		</div>
 
 		<div>
-			<div class="center" style="text-align: center; color: white">
+			<div class="center" style="text-align: center">
 
 				{% if type == "movie" %}
 				<ul>
@@ -37,21 +38,22 @@
 
 			</div>
 
-//Footer
+
 			<div>
-				<footer style="text-align:center; color: white">
+				<footer style="text-align:center">
 					<p>
 						<a href="/" style="text-decoration:none">Home</a> |
 						<a href="/about" style="text-decoration:none">About</a>
 					</p>
 				</footer>
 			</div>
-//End of footer	
+
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../static/js/script.js"></script>
 
 	</body>
-//End of Body
+
 </html>
