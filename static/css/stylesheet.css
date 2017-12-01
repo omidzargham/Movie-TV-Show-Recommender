@@ -17,3 +17,29 @@ div.center {
     text-align: center;
     align-content: center;
 }
+
+html, body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.table {
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
+.table th, .table td { 
+     border-top: none !important; 
+ }
+

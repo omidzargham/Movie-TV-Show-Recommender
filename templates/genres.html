@@ -4,51 +4,68 @@
 	<head>
   		<meta charset="UTF-8">
 		<title>Movie and TV Show random generator</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    	<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
+    	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Other Style Sheets -->
+		<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
     	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	</head>
+	<body style="background-color: black">
+<!--Text -->
+		<h1 style="color: white" class="text-center font-weight-light">Pick the TV genre you're interested in</h1>
+<!-- Text End -->
+<!-- Start of Icons for Movie Genres --> 
+		<table class="table table-responsive table-borderless">
+			<thead>
+				<tbody>
+					<tr>
+						<td class="col-sm-1">
+							<a id= "Action" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/tE15YJG.png" class="img-fluid" onmouseover="this.src='https://i.imgur.com/FobSb4c.png'" onmouseout="this.src='https://i.imgur.com/tE15YJG.png'"></a>
+						</td>
+						<td class="col-sm-1">
+							<a id= "Adventure" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/1ykLAV8.png"  class="img-fluid" onmouseover="this.src='https://i.imgur.com/GTypG1b.png'" onmouseout="this.src='https://i.imgur.com/1ykLAV8.png'"></a>	
 
-	<body>
+		        		</td>
+						<td class="col-sm-1">
+							<a id= "Animation" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/cGFkohc.png"  class="img-fluid" onmouseover="this.src='https://i.imgur.com/bx1FdX1.png'" onmouseout="this.src='https://i.imgur.com/cGFkohc.png'"></a>	
+						</td>
+						<td class="col-sm-1">
+							<a id= "Comedy" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/027tshw.png" class="img-fluid" onmouseover="this.src='https://i.imgur.com/wlcHE26.png'" onmouseout="this.src='https://i.imgur.com/027tshw.png'"></a>	
+						</td>
+					</tr>
+					<tr>
+						<td class="col-sm-1">
+							<a id= "Drama" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/CcQ7lcQ.png"  class="img-fluid" onmouseover="this.src='https://i.imgur.com/vZvlQiw.png'" onmouseout="this.src='https://i.imgur.com/CcQ7lcQ.png'"></a>	
+						</td>
+						<td class="col-sm-1">
+							<a id= "Horror" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/ZLKHWhj.png"  class="img-fluid" onmouseover="this.src='https://i.imgur.com/VfPzb8X.png'" onmouseout="this.src='https://i.imgur.com/ZLKHWhj.png'"></a>	
 
-		<div>
-			<h1>Please select the type of Movie you'd like to watch:</h1>
-		</div>
+						</td>
+						<td class="col-sm-1">
+							<a id= "Romance" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/YC1SO0w.png"  class="img-fluid" onmouseover="this.src='https://i.imgur.com/Da6qEZo.png'" onmouseout="this.src='https://i.imgur.com/YC1SO0w.png'"></a>
+						</td>
+						<td class="col-sm-1">
+							<a id= "Science Fiction" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/nU5jG0G.png" class="img-fluid" onmouseover="this.src='https://i.imgur.com/wfVsRrB.png'" onmouseout="this.src='https://i.imgur.com/nU5jG0G.png'"></a>
+						</td>
+					</tr>
+				</tbody>
+		</table>
 
-		<div>
-			<div class="center" style="text-align: center">
-			
-			   	<a id= "Action" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/tE15YJG.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/FobSb4c.png'" onmouseout="this.src='https://i.imgur.com/tE15YJG.png'"></a>
-
-			   	<a id= "Adventure" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/1ykLAV8.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/GTypG1b.png'" onmouseout="this.src='https://i.imgur.com/1ykLAV8.png'"></a>	
-
-			   	<a id= "Animation" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/cGFkohc.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/bx1FdX1.png'" onmouseout="this.src='https://i.imgur.com/cGFkohc.png'"></a>	
-
-			   	<a id= "Comedy" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/027tshw.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/wlcHE26.png'" onmouseout="this.src='https://i.imgur.com/027tshw.png'"></a>	
-
-			   	<a id= "Drama" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/CcQ7lcQ.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/vZvlQiw.png'" onmouseout="this.src='https://i.imgur.com/CcQ7lcQ.png'"></a>	
-
-			   	<a id= "Horror" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/ZLKHWhj.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/VfPzb8X.png'" onmouseout="this.src='https://i.imgur.com/ZLKHWhj.png'"></a>	
-
-			   	<a id= "Romance" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/YC1SO0w.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/Da6qEZo.png'" onmouseout="this.src='https://i.imgur.com/YC1SO0w.png'"></a>	
-
-			   	<a id= "Science Fiction" href="/list" onclick="addURLParams(this)"><img src="https://i.imgur.com/nU5jG0G.png" HEIGHT="30%" WIDTH="30%" onmouseover="this.src='https://i.imgur.com/wfVsRrB.png'" onmouseout="this.src='https://i.imgur.com/nU5jG0G.png'"></a>	
-			</div>
-
-
+<!-- End of icons -->
+<!-- Start of footer -->
 			<div>
-				<footer style="text-align:center">
+				<footer style="text-align:center; color: white">
 					<p>
 						<a href="/" style="text-decoration:none">Home</a> |
 						<a href="/about" style="text-decoration:none">About</a>
 					</p>
 				</footer>
 			</div>
-
-		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- End of footer -->
 		<script type="text/javascript" src="../static/js/script.js"></script>
 
 	</body>
