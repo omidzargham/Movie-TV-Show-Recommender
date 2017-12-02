@@ -4,32 +4,32 @@
 	<head>
   		<meta charset="UTF-8">
 		<title>Movie and TV Show random generator</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    	<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- Other Style Sheets -->
+		<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
     	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	</head>
 
 	<body style="background-color: black">
 
 		<div>
-			<h1>Your selection:</h1>
+			<h1 style="color: white">Your selection:</h1>
 		</div>
 
 		<div>
-			<div class="center" style="text-align: center">
+			<div class="center" style="text-align: center; color: white">
 
 				{% if type == "movie" %}
                 
-                    <p>{{selection.title}} {{selection.release_date}} {{selection.overview }}</p>
+                    <p>{{selection.title}} <br> {{selection.release_date}} <br> {{selection.overview }}</p>
 
 				{% else %}
                 
-                    <p>{{selection.name}} {{selection.first_air_date}} {{selection.overview}}</p>
+                    <p>{{selection.name}}<br> {{selection.first_air_date}}<br> {{selection.overview}}</p>
 
 				{% endif %}	
 
@@ -47,8 +47,6 @@
 
 		</div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="../static/js/script.js"></script>
 
 	</body>
