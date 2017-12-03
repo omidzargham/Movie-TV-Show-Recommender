@@ -62,7 +62,8 @@ def generate_list():
     discover_url = api_base_url + "discover/" + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
     movie_list = r.json()["results"]
-    return render_template("list.html", type=entertainment_type, list=movie_list) # need to properly place in movie data
+    print(movie_list)
+    return render_template("list.html", type=entertainment_type, list=movie_list, url=image_base_url) # need to properly place in movie data
 
 @app.route("/selection")
 def display_selection():
