@@ -16,7 +16,7 @@ api_base_url = "https://api.themoviedb.org/3/"
 
 image_base_url = "https://image.tmdb.org/t/p/w1280/" #append "poster_path" attribute to this url to get image for movie/tv show
 
-youtube_url = "https://www.youtube.com/watch?v=" #append video "key" attribute to this url to get trailer for a particular movie/tv show
+youtube_url = "https://www.youtube.com/embed/" #append video "key" attribute to this url to get trailer for a particular movie/tv show
 
 
 def getGenres():
@@ -63,18 +63,17 @@ def generate_list():
     r = requests.get(discover_url)
     movie_list = r.json()["results"]
     print(movie_list)
-    return render_template("list.html", type=entertainment_type, list=movie_list, url=image_base_url) # need to properly place in movie data
+    return render_template("list.html", type=entertainment_type, list=movie_list, image_url=image_base_url) # need to properly place in movie data
 
 @app.route("/selection")
 def display_selection():
     entertainment_type = request.args.get("entertainment_type")
     ID = request.args.get("id")
-    print(ID)
     selection_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&append_to_response=videos" #Gets movie details and Youtube IDs to get trailer from Youtube
     selection_url = api_base_url + entertainment_type + "/" + str(ID) + selection_params 
     r = requests.get(selection_url)
     print(r.json())
-    return render_template("selection.html", type=entertainment_type, selection=r.json())
+    return render_template("selection.html", type=entertainment_type, selection=r.json(), image_url=image_base_url, youtube_url=youtube_url)
 
 
 

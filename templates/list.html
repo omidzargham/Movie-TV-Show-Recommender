@@ -27,7 +27,7 @@
 				<ul>
 					{% for movie in list %}
 
-						<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;"><li><img src="{{url}}{{movie.poster_path}}" height="100" width="100"> {{movie.title}} <br> {{movie.release_date}} <br> {{movie.overview}}</li></a>
+						<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;"><li><img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"> {{movie.title}} <br> {{movie.release_date}} <br> {{movie.overview}}</li></a>
 
 					{% endfor %}
 				</ul>
@@ -35,7 +35,7 @@
 				<ul>
 					{% for tvshow in list %}
 				
-						<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;"><li><img src="{{url}}{{tvshow.poster_path}}" height="100" width="100"> {{tvshow.name}} <br> {{tvshow.first_air_date}} <br>{{tvshow.overview}}</li></a>
+						<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;"><li><img src="{{image_url}}{{tvshow.poster_path}}" height="100" width="100"> {{tvshow.name}} <br> {{tvshow.first_air_date}} <br>{{tvshow.overview}}</li></a>
 				
 					{% endfor %}
 				</ul>

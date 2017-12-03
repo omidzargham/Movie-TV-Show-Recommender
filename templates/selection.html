@@ -23,15 +23,23 @@
 		<div>
 			<div class="center" style="text-align: center; color: white">
 
+				<img src="{{image_url}}{{selection.poster_path}}" height="100" width="100">
+
 				{% if type == "movie" %}
-                
-                    <p>{{selection.title}} <br> {{selection.release_date}} <br> {{selection.overview }}</p>
+					
+					<p>{{selection.title}} <br> {{selection.release_date}} <br> {{selection.overview }}</p>
 
 				{% else %}
                 
                     <p>{{selection.name}}<br> {{selection.first_air_date}}<br> {{selection.overview}}</p>
 
 				{% endif %}	
+
+				{% if selection.videos.results[0] is defined %}
+
+				<iframe width="420" height="315" src="{{youtube_url}}{{selection.videos.results[0].key}}"></iframe>
+
+				{% endif %}
 
 			</div>
 
