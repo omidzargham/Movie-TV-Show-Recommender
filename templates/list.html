@@ -17,28 +17,57 @@
 	<body style="background-color: black">
 
 		<div>
-			<h1 style="color: white">Here is a list of movies we found for you:</h1>
+			<h1>Here is a list of movies we found for you:</h1>
 		</div>
 
-		<div>
-			<div class="center" style="text-align: center; color: white">
+		<div class="container">
+
+			<div class="row">
 
 				{% if type == "movie" %}
-				<ul>
+				
 					{% for movie in list %}
 
-						<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;"><li><img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"> {{movie.title}} <br> {{movie.release_date}} <br> {{movie.overview}}</li></a>
+						<div class="col-sm-4 listing">
+
+								<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
+
+									<img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"> 
+
+									<h2>{{movie.title}}</h2> 
+									
+									<p>{{movie.release_date}}</p> 
+									
+									<p>{{movie.overview}}</p>
+								
+								</a>
+
+						</div>
 
 					{% endfor %}
-				</ul>
-				{% else %}
-				<ul>
-					{% for tvshow in list %}
 				
-						<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;"><li><img src="{{image_url}}{{tvshow.poster_path}}" height="100" width="100"> {{tvshow.name}} <br> {{tvshow.first_air_date}} <br>{{tvshow.overview}}</li></a>
+				{% else %}
+				
+					{% for tvshow in list %}
+
+						<div class="col-sm-4">
+
+								<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
+									
+									<img src="{{image_url}}{{tvshow.poster_path}}" height="100" width="100"> 
+
+									<h2>{{tvshow.name}}</h2> 
+
+									<p>{{tvshow.first_air_date}}</p> 
+									
+									<p>{{tvshow.overview}}</p>
+								
+								</a>
+
+						</div>
 				
 					{% endfor %}
-				</ul>
+		
 				{% endif %}	
 
 			</div>
