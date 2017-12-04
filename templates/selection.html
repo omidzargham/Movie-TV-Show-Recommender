@@ -3,7 +3,8 @@
 
 	<head>
   		<meta charset="UTF-8">
-		<title>Movie and TV Show random generator</title>
+		<title>Movie and TV Show generator</title>
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,6 +13,7 @@
 		<!-- Other Style Sheets -->
 		<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
     	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 	</head>
 
 	<body style="background-color: black">
@@ -20,24 +22,40 @@
 			<h1 style="color: white">Your selection:</h1>
 		</div>
 
-		<div>
+	<div>
 			<div class="center" style="text-align: center; color: white">
 
-				<img src="{{image_url}}{{selection.poster_path}}" height="100" width="100">
-
 				{% if type == "movie" %}
-					
-					<p>{{selection.title}} <br> {{selection.release_date}} <br> {{selection.overview }}</p>
+
+				<div class="container-fluid text-center">
+				<div class="row content">
+					<div class="col-sm-2 sidenav">
+						<img src="{{image_url}}{{selection.poster_path}}" height="150" width="150">
+				</div>
+				</div>
+				</div><p><h2>{{selection.title}}</h2>
+									<br> {{selection.release_date}}
+									<br> {{selection.overview }}</p>
 
 				{% else %}
-                
-                    <p>{{selection.name}}<br> {{selection.first_air_date}}<br> {{selection.overview}}</p>
 
-				{% endif %}	
+				<div class="container-fluid text-center">
+				<div class="row content">
+					<div class="col-sm-2 sidenav">
+						<img src="{{image_url}}{{selection.poster_path}}" height="150" width="150">
+				</div>
+				</div>
+			</div><p><h2>{{selection.name}}</h2>
+									<br> {{selection.release_date}}
+									<br> {{selection.overview }}</p>
+
+				{% endif %}
 
 				{% if selection.videos.results[0] is defined %}
 
+				<footer class="container-fluid text-center">
 				<iframe width="420" height="315" src="{{youtube_url}}{{selection.videos.results[0].key}}"></iframe>
+				</footer>
 
 				{% endif %}
 
