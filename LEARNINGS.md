@@ -4,7 +4,7 @@ By Omid Afshar, Omid Zargham, Divine Velasquez, Camille Harris
 
 ### URL
 
-Our application is available at: 
+Our application is available at: http://entertainmentrecommender.herokuapp.com/
 
 ### Overview:
 
