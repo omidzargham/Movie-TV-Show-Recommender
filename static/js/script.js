@@ -32,4 +32,16 @@ function addMovieID(element) {
             return this.href + "?entertainment_type=" + entertainment_type + "&id=" + id;
         });
     
-    }
+}
+
+
+$(".genre").one('click', function(){
+
+    $(this).attr('href', function() {
+            
+        var entertainment_type = localStorage.getItem('entertainment_type');
+        var genre = $(this).attr('id')
+        return this.href + "?entertainment_type=" + entertainment_type + "&genre=" + genre;
+    });
+
+});    
