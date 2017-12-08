@@ -1,6 +1,6 @@
 # Movie/TV Show Recommendations
 
-## By Omid Afshar, Omid Zargham, Divine Velasquez, Camille Harris
+By Omid Afshar, Omid Zargham, Divine Velasquez, Camille Harris
 
 ### URL
 
