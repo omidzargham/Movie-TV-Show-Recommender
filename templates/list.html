@@ -12,6 +12,7 @@
 		<!-- Other Style Sheets -->
 		<link rel="stylesheet" type="text/css" href="../static/css/stylesheet.css">
     	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 	</head>
 
 	<body style="background-color: black">
@@ -22,26 +23,31 @@
 
 		<div class="container">
 
-			<div class="row">
+			<div class="row row-eq-height">
 
 				{% if type == "movie" %}
 				
 					{% for movie in list %}
 
-						<div class="col-sm-4 listing">
+						<div class="col-sm-3">
+							<div class="listing">
+
+								<p style="text-align:center"><img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"></p>
+
+								<h2 style="text-align: center">{{movie.title}}</h2> 
+									
+								<h3 style="text-align: center">{{movie.release_date}}</h3>
 
 								<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
 
-									<img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"> 
+									<div style="text-align: center;">
 
-									<h2>{{movie.title}}</h2> 
-									
-									<p>{{movie.release_date}}</p> 
-									
-									<p>{{movie.overview}}</p>
+										<button type="button" id="see-more-button" class="btn btn-info">See More</button>
+
+									</div>
 								
 								</a>
-
+							</div>
 						</div>
 
 					{% endfor %}

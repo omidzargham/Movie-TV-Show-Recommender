@@ -58,7 +58,9 @@ def generate_list():
             break
 
     discover_params = "?api_key=" + os.environ['API_KEY'] + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1"    
-
+    print(entertainment_type)
+    print("hi")
+    print("discover_params")
     discover_url = api_base_url + "discover/" + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
     movie_list = r.json()["results"]
