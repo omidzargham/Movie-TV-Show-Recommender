@@ -3,7 +3,8 @@
 
 	<head>
   		<meta charset="UTF-8">
-		<title>Movie and TV Show generator</title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Your Selection</title>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- jQuery library -->
@@ -21,49 +22,52 @@
 		<div>
 			<h1 style="color: white">Your selection:</h1>
 		</div>
+	<div class="container">
 
-	<div>
-			<div class="center" style="text-align: center; color: white">
+		<div class="row row-eq-height">
+			{% if type == "movie" %}
 
-				{% if type == "movie" %}
+				<div class="col-sm-12">
+					<div class="listing">
+						<div class="listing-content">
 
-				<div class="container-fluid text-center">
-				<div class="row content">
-					<div class="col-sm-2 sidenav">
-						<img src="{{image_url}}{{selection.poster_path}}" height="150" width="150">
+							<p style="text-align:center"><img src="{{image_url}}{{selection.poster_path}}" height="100" width="100"></p>
+							<h2 class="title" style="text-align: center">{{selection.title}}</h2> 
+							<h3 class="date" style="text-align: center">{{selection.release_date}}</h3>
+							<h3 class="overview" style="text-align: center">{{selection.overview}} </h3>
+						</div>
+					</div>
 				</div>
+			
+			{% else %}
+		
+				<div class="col-sm-12">
+					<div class="listing">
+						<div class="listing-content">
+
+							<p style="text-align:center"><img src="{{image_url}}{{selection.poster_path}}" height="100" width="100"></p>
+
+							<h2 class ="title" style="text-align: center">{{selection.name}}</h2> 	
+							<h3 class="date" style="text-align: center">{{selection.first_air_date}}</h3>
+							<h3 class="overview" style="text-align: center">{{selection.overview}} </h3>
+						</div>
+					</div>
 				</div>
-				</div><p><h2>{{selection.title}}</h2>
-									<br> {{selection.release_date}}
-									<br> {{selection.overview }}</p>
-
-				{% else %}
-
-				<div class="container-fluid text-center">
-				<div class="row content">
-					<div class="col-sm-2 sidenav">
-						<img src="{{image_url}}{{selection.poster_path}}" height="150" width="150">
-				</div>
-				</div>
-			</div><p><h2>{{selection.name}}</h2>
-									<br> {{selection.release_date}}
-									<br> {{selection.overview }}</p>
-
-				{% endif %}
-
-				{% if selection.videos.results[0] is defined %}
-
-				<footer class="container-fluid text-center">
-				<iframe width="420" height="315" src="{{youtube_url}}{{selection.videos.results[0].key}}"></iframe>
-				</footer>
-
-				{% endif %}
-
+	
+			{% endif %}	
+		{% if selection.videos.results[0] is defined %}
+			<div class="container-fluid text-center">
+				<iframe width="700" height="500" src="{{youtube_url}}{{selection.videos.results[0].key}}"></iframe>
+				<br>
+				<br>
 			</div>
+
+			{% endif %}
+		</div>
 
 
 			<div>
-				<footer style="text-align:center; color: white">
+				<footer style="text-align:center">
 					<p>
 						<a href="/" style="text-decoration:none">Home</a> |
 						<a href="/about" style="text-decoration:none">About</a>

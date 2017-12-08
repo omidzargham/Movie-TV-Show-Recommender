@@ -97,17 +97,17 @@ p {
   flex-direction: column;
 }
 
-#date {
+.date {
   font-size: 20px;
   margin-top: 0px;
 }
 
-#vote {
+.vote {
   font-size: 18px;
   margin-top: 0px;
 }
 
-#title {
+.title {
   font-size: 25px;
   margin-top: 0px;
 }

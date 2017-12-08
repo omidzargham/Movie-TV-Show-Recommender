@@ -4,7 +4,7 @@
 	<head>
   		<meta charset="UTF-8">
   		 <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Movie and TV Show random generator</title>
+		<title>Results</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -35,10 +35,10 @@
 
 									<p style="text-align:center"><img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"></p>
 
-									<h2 id="title" style="text-align: center">{{movie.title}}</h2> 
+									<h2 class="title" style="text-align: center">{{movie.title}}</h2> 
 										
-									<h3 id="date" style="text-align: center">{{movie.release_date}}</h3>
-									<h3 id="vote" style="text-align: center">{{movie.vote_average|string}} / 10 </h3>
+									<h3 class="date" style="text-align: center">{{movie.release_date}}</h3>
+									<h3 class="vote" style="text-align: center">{{movie.vote_average|string}} / 10 </h3>
 
 									<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
 
@@ -64,10 +64,10 @@
 
 									<p style="text-align:center"><img src="{{image_url}}{{tvshow.poster_path}}" height="100" width="100"></p>
 
-									<h2 id ="title" style="text-align: center">{{tvshow.name}}</h2> 
+									<h2 class ="title" style="text-align: center">{{tvshow.name}}</h2> 
 										
-									<h3 id="date" style="text-align: center">{{tvshow.first_air_date}}</h3>
-									<h3 id="vote" style="text-align: center">{{tvshow.vote_average|string}} / 10 </h3>
+									<h3 class="date" style="text-align: center">{{tvshow.first_air_date}}</h3>
+									<h3 class="vote" style="text-align: center">{{tvshow.vote_average|string}} / 10 </h3>
 
 									<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
 

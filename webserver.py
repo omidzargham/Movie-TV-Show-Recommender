@@ -14,7 +14,7 @@ app = Flask(__name__,static_url_path="/static")
 
 api_base_url = "https://api.themoviedb.org/3/"
 
-image_base_url = "https://image.tmdb.org/t/p/w1280/" #append "poster_path" attribute to this url to get image for movie/tv show
+image_base_url = "https://image.tmdb.org/t/p/w1280" #append "poster_path" attribute to this url to get image for movie/tv show
 
 youtube_url = "https://www.youtube.com/embed/" #append video "key" attribute to this url to get trailer for a particular movie/tv show
 
@@ -64,6 +64,7 @@ def generate_list():
     discover_url = api_base_url + "discover/" + entertainment_type + discover_params + "&with_genres=" + genre_id
     r = requests.get(discover_url)
     movie_list = r.json()["results"]
+    print(movie_list[0])
     return render_template("list.html", type=entertainment_type, list=movie_list, image_url=image_base_url) # need to properly place in movie data
 
 @app.route("/selection")
