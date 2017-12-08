@@ -2,7 +2,8 @@
   color: white;
 }
 h1{
-	 font-size: 100%;
+	  font-size: 100%;
+    text-align: center;
   	font-weight: normal;
   	margin: 0;
   	padding: 0;
@@ -19,6 +20,7 @@ h2 {
 div.center {
     text-align: center;
     align-content: center;
+    margin: 10px;
 }
 
 html, body {
@@ -67,9 +69,6 @@ a:active {
   margin-bottom: 30px;
   height: 300px;
   padding: 10px;
-  margin-top:auto;
-    margin-bottom:auto;
-    text-align:center;
 }
 
 .row {
@@ -91,7 +90,24 @@ p {
 }
 
 .listing-content {
-  margin-top:auto;
-    margin-bottom:auto;
-    text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+#date {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+#vote {
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+#title {
+  font-size: 25px;
+  margin-top: 0px;
 }

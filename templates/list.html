@@ -3,6 +3,7 @@
 
 	<head>
   		<meta charset="UTF-8">
+  		 <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Movie and TV Show random generator</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- jQuery library -->
@@ -24,29 +25,31 @@
 		<div class="container">
 
 			<div class="row row-eq-height">
-
 				{% if type == "movie" %}
 				
 					{% for movie in list %}
 
 						<div class="col-sm-3">
 							<div class="listing">
+								<div class="listing-content">
 
-								<p style="text-align:center"><img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"></p>
+									<p style="text-align:center"><img src="{{image_url}}{{movie.poster_path}}" height="100" width="100"></p>
 
-								<h2 style="text-align: center">{{movie.title}}</h2> 
+									<h2 id="title" style="text-align: center">{{movie.title}}</h2> 
+										
+									<h3 id="date" style="text-align: center">{{movie.release_date}}</h3>
+									<h3 id="vote" style="text-align: center">{{movie.vote_average|string}} / 10 </h3>
+
+									<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
+
+										<div style="text-align: center;">
+
+											<button type="button" id="see-more-button" class="btn btn-info">See More</button>
+
+										</div>
 									
-								<h3 style="text-align: center">{{movie.release_date}}</h3>
-
-								<a movie-id="{{ movie.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
-
-									<div style="text-align: center;">
-
-										<button type="button" id="see-more-button" class="btn btn-info">See More</button>
-
-									</div>
-								
-								</a>
+									</a>
+								</div>
 							</div>
 						</div>
 
@@ -55,21 +58,28 @@
 				{% else %}
 				
 					{% for tvshow in list %}
+					<div class="col-sm-3">
+							<div class="listing">
+								<div class="listing-content">
 
-						<div class="col-sm-4">
+									<p style="text-align:center"><img src="{{image_url}}{{tvshow.poster_path}}" height="100" width="100"></p>
 
-								<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
+									<h2 id ="title" style="text-align: center">{{tvshow.name}}</h2> 
+										
+									<h3 id="date" style="text-align: center">{{tvshow.first_air_date}}</h3>
+									<h3 id="vote" style="text-align: center">{{tvshow.vote_average|string}} / 10 </h3>
+
+									<a movie-id="{{ tvshow.id }}" href="/selection" onclick="addMovieID(this); this.onclick=null;">
+
+										<div style="text-align: center;">
+
+											<button type="button" id="see-more-button" class="btn btn-info">See More</button>
+
+										</div>
 									
-									<img src="{{image_url}}{{tvshow.poster_path}}" height="100" width="100"> 
-
-									<h2>{{tvshow.name}}</h2> 
-
-									<p>{{tvshow.first_air_date}}</p> 
-									
-									<p>{{tvshow.overview}}</p>
-								
-								</a>
-
+									</a>
+								</div>
+							</div>
 						</div>
 				
 					{% endfor %}
