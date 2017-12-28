@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project
 Build something awesome
 
@@ -56,3 +57,7 @@ Build something awesome
 ## Extra Credit
  - Build your own API server and incorporate it with your project
  - You will need to deploy your API server in addition to your web server
+=======
+# Movie-TV-Show-Recommender
+simple web app to suggest movies/tv shows. Built with flask.
+>>>>>>> 6a8800a2ae8df4edae5cd1581a5d2e1031242268
