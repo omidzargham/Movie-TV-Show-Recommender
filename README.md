@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/omidzargham/entertainment-recommender.svg?branch=master)](https://travis-ci.org/omidzargham/entertainment-recommender)
 # Movie/TV Show Recommendations
 
 By Omid Zargham, Omid Afshar, Divine Velasquez, Camille Harris
